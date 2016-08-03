@@ -1,6 +1,6 @@
 package com.vwmattr.kotlinweatherapp
 
-import android.widget.TextView
+import android.support.v7.widget.RecyclerView
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -17,11 +17,12 @@ import org.robolectric.annotation.Config
 class MainActivityTest {
 
     @Test
-    fun itShouldDisplayHelloKotlin() {
+    fun shouldDisplayForecastList() {
         val activity = Robolectric.setupActivity(MainActivity::class.java)
-        val textView = activity.findViewById(R.id.message) as TextView
+        val forecastList = activity.findViewById(R.id.forecast_list) as RecyclerView
 
-        assertThat(textView.text).isEqualTo("Hello Kotlin!")
+        assertThat((forecastList.adapter as ForecastListAdapter).items)
+                .hasSameElementsAs(activity.items)
     }
 
 }
