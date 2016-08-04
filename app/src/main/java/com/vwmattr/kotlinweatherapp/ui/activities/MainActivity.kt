@@ -1,10 +1,12 @@
-package com.vwmattr.kotlinweatherapp
+package com.vwmattr.kotlinweatherapp.ui.activities
 
 import android.os.Bundle
 import android.support.annotation.VisibleForTesting
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import com.vwmattr.kotlinweatherapp.ui.adapters.ForecastListAdapter
+import com.vwmattr.kotlinweatherapp.R
 import org.jetbrains.anko.find
 
 class MainActivity : AppCompatActivity() {

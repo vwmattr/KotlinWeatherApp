@@ -1,6 +1,8 @@
 package com.vwmattr.kotlinweatherapp
 
 import android.support.v7.widget.RecyclerView
+import com.vwmattr.kotlinweatherapp.ui.activities.MainActivity
+import com.vwmattr.kotlinweatherapp.ui.adapters.ForecastListAdapter
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Test
 import org.junit.runner.RunWith
