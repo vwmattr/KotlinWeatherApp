@@ -19,7 +19,7 @@ class MainActivityTest {
     @Test
     fun shouldDisplayForecastList() {
         val activity = Robolectric.setupActivity(MainActivity::class.java)
-        val forecastList = activity.findViewById(R.id.forecast_list) as RecyclerView
+        val forecastList = activity.findViewById(R.id.forecastList) as RecyclerView
 
         //TODO: Figure out how to test this (migrate to MVP pattern and inject stuff?)
 //        assertThat((forecastList.adapter as ForecastListAdapter).items)
