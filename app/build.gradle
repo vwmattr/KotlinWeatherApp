@@ -42,14 +42,22 @@ dependencies {
     compile "com.google.code.gson:gson:2.8.0"
     compile "com.squareup.picasso:picasso:2.5.2"
 
+    //Dagger
+    compile ("com.google.dagger:dagger-android-support:$dagger_version") {
+        exclude group: 'com.google.code.findbugs'
+    }
+    kapt "com.google.dagger:dagger-compiler:$dagger_version"
+    kapt "com.google.dagger:dagger-android-processor:$dagger_version"
+
+    //Unit Test
     testCompile 'junit:junit:4.12'
     testCompile 'org.assertj:assertj-core:3.5.2'
     testCompile('com.squareup.assertj:assertj-android:1.1.1') {
         exclude module: 'support-annotations'
     }
     testCompile 'com.squareup.assertj:assertj-android:1.1.1'
-    testCompile 'org.robolectric:robolectric:3.4-rc3'
-    testCompile "com.nhaarman:mockito-kotlin-kt1.1:1.5.0"
-    testCompile "org.mockito:mockito-inline:2.8.9"
+    testCompile "org.robolectric:robolectric:$robolectric_version"
+    testCompile "com.nhaarman:mockito-kotlin-kt1.1:$kotlinMockito_version"
+    testCompile "org.mockito:mockito-inline:$mockito_version"
     testCompile "com.android.support:appcompat-v7:$support_version"
 }

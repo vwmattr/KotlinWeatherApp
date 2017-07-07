@@ -6,6 +6,14 @@ buildscript {
         kotlin_version = '1.1.2-4'
         anko_version = '0.10.0'
         constraintLayoutVersion = '1.0.2'
+
+        //Third Party Libs
+        dagger_version = '2.11'
+
+        //Test
+        robolectric_version = '3.4-rc3'
+        mockito_version = '2.8.9'
+        kotlinMockito_version = '1.5.0'
     }
 
     repositories {
