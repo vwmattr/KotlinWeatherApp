@@ -12,7 +12,7 @@ import com.vwmattr.kotlinweatherapp.ui.utils.ctx
 import kotlinx.android.synthetic.main.view_forecast_item.view.*
 
 /**
- * ForecastListAdapter for displaying forecasts in MainActivity.
+ * ForecastListAdapter for displaying forecasts in ForecastActivity.
  * Added in Chapter 5.
  */
 class ForecastListAdapter(val weekForecast: ForecastList,
