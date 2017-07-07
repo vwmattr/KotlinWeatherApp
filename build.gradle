@@ -9,6 +9,8 @@ buildscript {
 
         //Third Party Libs
         dagger_version = '2.11'
+        reactiveXVersion = '2.0.8'
+        reactiveXAndroidVersion = '2.0.1'
 
         //Test
         robolectric_version = '3.4-rc3'

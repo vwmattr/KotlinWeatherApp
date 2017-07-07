@@ -49,6 +49,12 @@ dependencies {
     kapt "com.google.dagger:dagger-compiler:$dagger_version"
     kapt "com.google.dagger:dagger-android-processor:$dagger_version"
 
+    //RxJava
+    //Rx
+    compile "io.reactivex.rxjava2:rxandroid:$reactiveXAndroidVersion"
+    compile "io.reactivex.rxjava2:rxjava:$reactiveXVersion"
+
+
     //Unit Test
     testCompile 'junit:junit:4.12'
     testCompile 'org.assertj:assertj-core:3.5.2'
