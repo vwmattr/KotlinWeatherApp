@@ -4,6 +4,7 @@ import android.support.v7.widget.RecyclerView
 import com.nhaarman.mockito_kotlin.verify
 import com.vwmattr.kotlinweatherapp.domain.model.ForecastList
 import com.vwmattr.kotlinweatherapp.ui.ForecastView
+import com.vwmattr.kotlinweatherapp.ui.activities.BaseActivity
 import com.vwmattr.kotlinweatherapp.ui.activities.ForecastActivity
 import com.vwmattr.kotlinweatherapp.ui.adapters.ForecastListAdapter
 import org.assertj.core.api.Assertions.assertThat
@@ -37,6 +38,11 @@ class ForecastActivityTest {
     @Test
     fun shouldBeForecastView() {
         assertThat(activity).isInstanceOf(ForecastView::class.java)
+    }
+
+    @Test
+    fun shouldBeBaseActivity() {
+        assertThat(activity).isInstanceOf(BaseActivity::class.java)
     }
 
     @Test

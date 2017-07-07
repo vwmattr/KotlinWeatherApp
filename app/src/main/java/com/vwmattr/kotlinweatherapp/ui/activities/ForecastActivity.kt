@@ -1,10 +1,11 @@
 package com.vwmattr.kotlinweatherapp.ui.activities
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import com.vwmattr.kotlinweatherapp.R
+import com.vwmattr.kotlinweatherapp.dagger.component.DaggerForecastActivityComponent
+import com.vwmattr.kotlinweatherapp.dagger.module.ForecastActivityModule
 import com.vwmattr.kotlinweatherapp.domain.commands.RequestForecastCommand
 import com.vwmattr.kotlinweatherapp.domain.model.ForecastList
 import com.vwmattr.kotlinweatherapp.ui.ForecastView
@@ -13,7 +14,7 @@ import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.toast
 import org.jetbrains.anko.uiThread
 
-class ForecastActivity : ForecastView, AppCompatActivity() {
+class ForecastActivity : ForecastView, BaseActivity() {
 
     lateinit var forecastList: RecyclerView
 
@@ -37,5 +38,13 @@ class ForecastActivity : ForecastView, AppCompatActivity() {
     override fun displayForecast(forecast: ForecastList) {
         val adapter = ForecastListAdapter(forecast) { toast(it.date + " :-)") }
         forecastList.adapter = adapter
+    }
+
+    override fun injectActivity() {
+        DaggerForecastActivityComponent.builder()
+                .appComponent(getAppComponent())
+                .forecastActivityModule(ForecastActivityModule())
+                .build()
+                .inject(this)
     }
 }
