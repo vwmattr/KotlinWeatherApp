@@ -31,6 +31,7 @@ class ForecastActivity : ForecastView, BaseActivity() {
         forecastList.layoutManager = LinearLayoutManager(this)
 
         //TODO: Move this to the ForecastPresenter
+        //TODO: make this Rx-ified in the presenter!
         doAsync() {
             val result = RequestForecastCommand("80237").execute()
             uiThread {
@@ -38,6 +39,16 @@ class ForecastActivity : ForecastView, BaseActivity() {
             }
         }
 
+    }
+
+    override fun onStart() {
+        super.onStart()
+        presenter.startPresenting()
+    }
+
+    override fun onStop() {
+        super.onStop()
+        presenter.stopPresenting()
     }
 
     override fun displayForecast(forecast: ForecastList) {
